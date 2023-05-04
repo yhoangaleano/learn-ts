@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start:exercise-1": "tsc-watch --onSuccess \"node dist/basics/exercise-1/app.js\""
+    "start:exercise-1": "tsc-watch --onSuccess \"node dist/basics/exercise-1/app.js\"",
+    "start:exercise-2": "tsc-watch --onSuccess \"node dist/basics/exercise-2/poo-basic.js\""
   },
   "repository": {
     "type": "git",
