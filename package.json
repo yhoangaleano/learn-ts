@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start:exercise-1": "tsc-watch --onSuccess \"node dist/basics/exercise-1/app.js\"",
-    "start:exercise-2": "tsc-watch --onSuccess \"node dist/basics/exercise-2/poo-basic.js\""
+    "start:exercise-2": "tsc-watch --onSuccess \"node dist/basics/exercise-2/poo-basic.js\"",
+    "start:exercise-3": "tsc-watch --onSuccess \"node dist/basics/exercise-3/interfaces.js\""
   },
   "repository": {
     "type": "git",
