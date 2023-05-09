@@ -31,6 +31,23 @@ interface IContrato {
 
 }
 
+interface IClausula {
+    cumplirObjetivos(): boolean;
+}
+
+// Entre interfaces solo se puede hacer herencia
+interface IClausulaJunior extends IClausula {
+    levanteManoATiempo(): boolean;
+}
+
+interface IClausulaMedium extends IClausula {
+    apoyarProcesosCriticos(): boolean;
+}
+
+interface IClausulaSenior extends IClausula {
+    apoyarFormacion(): boolean;
+}
+
 class ContratoUltraCredit implements IContrato {
 
     // Atributos que debo tener de la interface ContratoJunior
@@ -62,7 +79,8 @@ class ContratoUltraCredit implements IContrato {
 
 }
 
-class ContratoGlobal implements IContrato {
+// Multiples implementaciones
+class ContratoGlobal implements IContrato, IClausulaJunior, IClausulaMedium, IClausulaSenior {
 
     salario?: number;
     fechaInicio?: Date;
@@ -71,6 +89,19 @@ class ContratoGlobal implements IContrato {
     constructor() {
         this.rol = Rol.Middle;
     }
+    levanteManoATiempo(): boolean {
+        throw new Error("Method not implemented.");
+    }
+    apoyarProcesosCriticos(): boolean {
+        throw new Error("Method not implemented.");
+    }
+    apoyarFormacion(): boolean {
+        throw new Error("Method not implemented.");
+    }
+    cumplirObjetivos(): boolean {
+        throw new Error("Method not implemented.");
+    }
+
 
     cancelar?(): void {
         console.log('Contrato cancelado');
@@ -91,20 +122,20 @@ class ContratoGlobal implements IContrato {
 const contratoJuan: IContrato = new ContratoGlobal();
 const contratoJuana: IContrato = new ContratoUltraCredit();
 
-const listaContratos = [ contratoJuan, contratoJuana ];
+const listaContratos = [contratoJuan, contratoJuana];
 
-listaContratos.forEach( ( contrato: IContrato ) => {
+listaContratos.forEach((contrato: IContrato) => {
 
     console.log('==============================');
     contrato.suspender(3);
-    console.log( typeof contrato );
+    console.log(typeof contrato);
 
-    if ( contrato instanceof ContratoUltraCredit ) {
+    if (contrato instanceof ContratoUltraCredit) {
         console.log(contrato.tipoContrato);
-    } else if ( contrato instanceof ContratoGlobal ) {
+    } else if (contrato instanceof ContratoGlobal) {
         contrato.cancelar!();
     }
 
     console.log('==============================');
 
-} );
+});
