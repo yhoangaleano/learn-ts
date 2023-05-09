@@ -8,7 +8,8 @@
     "start:exercise-2": "tsc-watch --onSuccess \"node dist/basics/exercise-2/poo-basic.js\"",
     "start:exercise-3": "tsc-watch --onSuccess \"node dist/basics/exercise-3/interfaces.js\"",
     "start:exercise-4": "tsc-watch --onSuccess \"node dist/basics/exercise-4/main_empleados.js\"",
-    "start:exercise-5": "tsc-watch --onSuccess \"node dist/basics/exercise-5/conversor.js\""
+    "start:exercise-5": "tsc-watch --onSuccess \"node dist/basics/exercise-5/conversor.js\"",
+    "start:poo": "tsc-watch --onSuccess \"node dist/poo/main_poo.js\""
   },
   "repository": {
     "type": "git",
